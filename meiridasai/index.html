@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日大赛寸止挑战-寸止挑战玩法_每日大赛热门看点_挑战规则与参与方式</title>
+<meta name="description" content="每日大赛寸止挑战是围绕每日大赛展开的寸止挑战热点内容页，汇总当日挑战看点、玩法规则、参与方式与热门讨论，帮助访问者快速了解每日大赛寸止挑战的来龙去脉。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1033'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23ffd166' stroke-width='4'/%3E%3Cpath d='M32 20v12l8 6' stroke='%23ff6b9d' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#120c22;
+  --bg2:#1b1033;
+  --card:#241640;
+  --card2:#2c1b4d;
+  --line:rgba(255,209,102,.18);
+  --text:#f3edff;
+  --muted:#b6a8d4;
+  --gold:#ffd166;
+  --pink:#ff6b9d;
+  --cyan:#5ee2e0;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(900px 500px at 85% -10%, rgba(255,107,157,.18), transparent 60%),
+    radial-gradient(700px 420px at 0% 0%, rgba(94,226,224,.12), transparent 55%),
+    var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+
+/* Header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(18,12,34,.86);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand svg{flex:0 0 auto}
+.brand span{
+  font-size:clamp(15px,2.2vw,19px);
+  font-weight:800;letter-spacing:.5px;
+  background:linear-gradient(90deg,var(--gold),var(--pink));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  white-space:nowrap;
+}
+nav ul{display:flex;gap:6px;list-style:none;flex-wrap:wrap}
+nav a{
+  display:inline-block;padding:6px 12px;border-radius:999px;
+  font-size:14px;color:var(--muted);border:1px solid transparent;
+}
+nav a:hover,nav a:focus-visible{color:var(--text);border-color:var(--line);background:rgba(255,209,102,.07)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--gold);border-radius:10px;padding:6px 10px;font-size:16px}
+
+/* Hero */
+.hero{padding:56px 0 40px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--cyan);
+  border:1px solid rgba(94,226,224,.35);
+  background:rgba(94,226,224,.08);
+  padding:4px 12px;border-radius:999px;margin-bottom:18px;
+}
+h1{
+  font-size:clamp(28px,5vw,48px);
+  line-height:1.22;font-weight:900;letter-spacing:1px;
+  background:linear-gradient(100deg,#fff 10%,var(--gold) 55%,var(--pink) 95%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.lead{margin-top:16px;color:var(--muted);font-size:16px;max-width:52ch}
+.lead strong{color:var(--gold);font-weight:700}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:999px;font-size:15px;font-weight:700;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.btn-main{background:linear-gradient(100deg,var(--gold),var(--pink));color:#1a0f2e;box-shadow:0 8px 22px rgba(255,107,157,.28)}
+.btn-ghost{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.03)}
+.btn:hover{transform:translateY(-2px)}
+.btn[aria-disabled="true"]{pointer-events:none;opacity:.95}
+.hero-art{position:relative;display:flex;justify-content:center}
+.hero-art svg{width:100%;max-width:320px;height:auto;filter:drop-shadow(0 18px 34px rgba(255,107,157,.22))}
+
+/* Stats */
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+  margin-top:38px;
+}
+.stat{
+  background:linear-gradient(160deg,var(--card),var(--card2));
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;
+}
+.stat b{display:block;font-size:24px;color:var(--gold);letter-spacing:.5px}
+.stat small{color:var(--muted);font-size:13px}
+
+/* Sections */
+section{padding:44px 0}
+.sec-head{margin-bottom:24px}
+.sec-head h2{
+  font-size:clamp(21px,3.2vw,27px);font-weight:800;letter-spacing:.5px;
+  display:flex;align-items:center;gap:10px;
+}
+.sec-head h2::before{
+  content:"";width:6px;height:22px;border-radius:3px;
+  background:linear-gradient(180deg,var(--gold),var(--pink));
+}
+.sec-head p{color:var(--muted);font-size:14.5px;margin-top:6px}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:linear-gradient(165deg,var(--card),#1d1236);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 20px;position:relative;overflow:hidden;
+  transition:transform .2s ease,border-color .2s ease;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,209,102,.4)}
+.card .idx{
+  font-size:12px;font-weight:800;letter-spacing:2px;color:var(--pink);
+}
+.card h3{font-size:17px;margin:8px 0 10px;font-weight:800;color:#fff}
+.card p{font-size:14px;color:var(--muted);line-height:1.8}
+.card .glow{
+  position:absolute;right:-40px;top:-40px;width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,209,102,.22),transparent 70%);
+}
+
+/* Rules list */
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.rule{
+  display:flex;gap:14px;
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px;
+}
+.rule .num{
+  flex:0 0 40px;height:40px;border-radius:12px;
+  display:grid;place-items:center;font-weight:900;color:#1a0f2e;
+  background:linear-gradient(135deg,var(--gold),var(--pink));
+}
+.rule h3{font-size:16px;margin-bottom:4px}
+.rule p{font-size:14px;color:var(--muted)}
+
+/* Timeline */
+.timeline{position:relative;padding-left:24px;border-left:2px dashed rgba(255,209,102,.28)}
+.tl-item{position:relative;padding:0 0 26px 6px}
+.tl-item::before{
+  content:"";position:absolute;left:-33px;top:7px;width:12px;height:12px;border-radius:50%;
+  background:var(--gold);box-shadow:0 0 0 4px rgba(255,209,102,.15);
+}
+.tl-item time{font-size:13px;color:var(--cyan);letter-spacing:.5px}
+.tl-item h3{font-size:16.5px;margin:3px 0 4px}
+.tl-item p{font-size:14px;color:var(--muted)}
+
+/* FAQ */
+.faq{display:grid;gap:12px}
+details{
+  background:rgba(255,255,255,.03);border:1px solid var(--line);
+  border-radius:14px;padding:14px 18px;
+}
+details[open]{border-color:rgba(255,209,102,.4);background:rgba(255,209,102,.05)}
+summary{
+  cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:20px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;font-size:14px;color:var(--muted)}
+
+/* Download panel */
+.panel{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;
+  background:linear-gradient(120deg,rgba(255,209,102,.12),rgba(255,107,157,.12));
+  border:1px solid var(--line);border-radius:20px;padding:26px 28px;
+}
+.panel h2{font-size:21px;margin-bottom:6px}
+.panel p{font-size:14px;color:var(--muted);max-width:52ch}
+
+/* Footer */
+footer{
+  border-top:1px solid var(--line);margin-top:20px;padding:30px 0 40px;
+  background:rgba(10,6,20,.6);
+}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:flex-start}
+.foot .fbrand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--gold);font-size:15px}
+.foot p{font-size:13px;color:var(--muted);max-width:60ch;line-height:1.8}
+.foot nav ul{gap:14px}
+.foot nav a{font-size:13px;padding:0;color:var(--muted)}
+.foot nav a:hover{color:var(--gold);background:none;border:none}
+.copy{margin-top:22px;font-size:12.5px;color:#7d6f9e}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .hero-art{order:-1;max-width:240px;margin:0 auto}
+  .cards{grid-template-columns:1fr 1fr}
+  .rules{grid-template-columns:1fr}
+}
+@media (max-width:680px){
+  .menu-btn{display:inline-block}
+  nav{display:none;width:100%}
+  nav.open{display:block}
+  nav ul{flex-direction:column;padding:8px 0 12px}
+  nav a{display:block;padding:9px 12px;border-radius:10px}
+  .bar{flex-wrap:wrap}
+  .cards{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .hero{padding:34px 0 24px}
+  section{padding:32px 0}
+  .panel{padding:20px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="每日大赛寸止挑战 首页">
+      <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1b1033"/>
+        <circle cx="32" cy="32" r="17" fill="none" stroke="#ffd166" stroke-width="4"/>
+        <path d="M32 20v12l8 6" stroke="#ff6b9d" stroke-width="4" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span>每日大赛寸止挑战</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">菜单</button>
+    <nav id="mainNav" aria-label="主导航">
+      <ul>
+        <li><a href="#points">今日看点</a></li>
+        <li><a href="#rules">挑战规则</a></li>
+        <li><a href="#flow">参与流程</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="#join">参与入口</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="tag">每日大赛 · 寸止挑战热点内容</span>
+          <h1>每日大赛寸止挑战</h1>
+          <p class="lead">
+            每日大赛寸止挑战是每日大赛里讨论度较高的一类挑战玩法。本站围绕 <strong>每日大赛寸止挑战</strong> 的当日看点、规则理解与参与方式做集中呈现，让第一次接触的访问者也能在一屏之内弄清楚它到底在比什么、怎么参与、看什么。
+          </p>
+          <div class="cta">
+            <a class="btn btn-main" href="#points">查看今日看点</a>
+            <a class="btn btn-ghost" href="#rules">了解挑战规则</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 320 260" role="img">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ffd166"/>
+                <stop offset="1" stop-color="#ff6b9d"/>
+              </linearGradient>
+              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#5ee2e0"/>
+                <stop offset="1" stop-color="#7b5cff"/>
+              </linearGradient>
+            </defs>
+            <circle cx="160" cy="128" r="96" fill="none" stroke="rgba(255,209,102,.22)" stroke-width="1.5"/>
+            <circle cx="160" cy="128" r="72" fill="none" stroke="rgba(94,226,224,.22)" stroke-width="1.5" stroke-dasharray="6 8"/>
+            <circle cx="160" cy="128" r="48" fill="url(#g1)" opacity=".14"/>
+            <circle cx="160" cy="128" r="30" fill="url(#g1)"/>
+            <path d="M160 108v22l14 9" fill="none" stroke="#1b1033" stroke-width="5" stroke-linecap="round"/>
+            <rect x="34" y="196" width="86" height="12" rx="6" fill="url(#g2)" opacity=".8"/>
+            <rect x="34" y="216" width="54" height="12" rx="6" fill="url(#g2)" opacity=".45"/>
+            <rect x="200" y="52" width="86" height="12" rx="6" fill="url(#g1)" opacity=".75"/>
+            <rect x="232" y="72" width="54" height="12" rx="6" fill="url(#g1)" opacity=".4"/>
+            <circle cx="58" cy="60" r="5" fill="#ff6b9d"/>
+            <circle cx="266" cy="176" r="5" fill="#5ee2e0"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>每日更新</b><small>看点按天整理，当天内容优先</small></div>
+        <div class="stat"><b>3 个环节</b><small>了解规则、看当日看点、再决定是否参与</small></div>
+        <div class="stat"><b>不限新手</b><small>首次接触也能按顺序读完</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="points">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>今日看点：每日大赛寸止挑战在讨论什么</h2>
+        <p>以下看点围绕每日大赛寸止挑战的内容本身展开，按读者关心的顺序排列，不涉及具体个人与未公开结果。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="glow"></span>
+          <div class="idx">01 / 玩法</div>
+          <h3>寸止的核心在“止”</h3>
+          <p>寸止挑战强调在接近临界点时主动停住，考验的是对节奏与自我控制的把握。理解这一点，基本就理解了每日大赛寸止挑战的看点重心。</p>
+        </article>
+        <article class="card">
+          <span class="glow"></span>
+          <div class="idx">02 / 赛制</div>
+          <h3>每日大赛的“每日”属性</h3>
+          <p>每日大赛按天推进，意味着每一天的挑战内容与讨论焦点都可能变化。关注每日大赛寸止挑战时，先看当天条目，再回看往期脉络更清楚。</p>
+        </article>
+        <article class="card">
+          <span class="glow"></span>
+          <div class="idx">03 / 讨论</div>
+          <h3>看点集中在过程而非结果</h3>
+          <p>围绕每日大赛寸止挑战的讨论，多数聚焦在挑战过程中的应对方式与临场反应，这也是这类内容容易被反复讨论的原因。</p>
+        </article>
+        <article class="card">
+          <span class="glow"></span>
+          <div class="idx">04 / 阅读</div>
+          <h3>先看规则再看内容</h3>
+          <p>不少新访客直接跳到看点，容易看不明白。建议先花两分钟读完下方规则，再回到每日大赛寸止挑战的当日看点，理解成本会低很多。</p>
+        </article>
+        <article class="card">
+          <span class="glow"></span>
+          <div class="idx">05 / 边界</div>
+          <h3>理性围观，量力参与</h3>
+          <p>每日大赛寸止挑战属于网络热点内容，围观与参与都应保持理性，不轻信未经证实的说法，也不把网络内容当作现实生活的标准。</p>
+        </article>
+        <article class="card">
+          <span class="glow"></span>
+          <div class="idx">06 / 更新</div>
+          <h3>当天内容当天看</h3>
+          <p>由于每日大赛寸止挑战以每日为单位推进，隔天回看时注意区分哪些是当天看点、哪些是此前积累的讨论，避免信息错位。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="rules">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>挑战规则：读懂每日大赛寸止挑战的四条线</h2>
+        <p>规则部分只解释通行理解，具体条目以每日大赛当天的公开说明为准，本站不做额外延伸。</p>
+      </div>
+      <div class="rules">
+        <div class="rule">
+          <div class="num">1</div>
+          <div>
+            <h3>时间线：以“每日”为单位</h3>
+            <p>每日大赛寸止挑战按天推进，当天内容有当天的窗口。错过当天的讨论，回看时需注意时间标注。</p>
+          </div>
+        </div>
+        <div class="rule">
+          <div class="num">2</div>
+          <div>
+            <h3>动作线：接近临界再停住</h3>
+            <p>寸止的关键动作是“停”，在关键节点主动收住。挑战的难度与看点都集中在这个停顿的判断上。</p>
+          </div>
+        </div>
+        <div class="rule">
+          <div class="num">3</div>
+          <div>
+            <h3>观看线：先看过程再看结论</h3>
+            <p>每日大赛寸止挑战的讨论价值在过程。只看结论容易误读，按过程顺序看更接近内容原貌。</p>
+          </div>
+        </div>
+        <div class="rule">
+          <div class="num">4</div>
+          <div>
+            <h3>边界线：不传播未证实说法</h3>
+            <p>热点内容常有二次加工。围绕每日大赛寸止挑战，本站只呈现可核对的范围，不替任何说法背书。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="flow">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>参与流程：从看到每日大赛寸止挑战到真正看懂</h2>
+        <p>把阅读拆成四步，按顺序走完，多数疑问都能自行解决。</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <time>第一步 · 认识</time>
+          <h3>先弄清它是什么</h3>
+          <p>用一句话概括：每日大赛寸止挑战是每日大赛中的一类挑战玩法，以“止”为关键动作。先建立这个认知，后面的内容才好接。</p>
+        </div>
+        <div class="tl-item">
+          <time>第二步 · 对照</time>
+          <h3>核对当日规则与看点</h3>
+          <p>看当天是否有新的规则说明，再对照今日看点逐条阅读。每日大赛寸止挑战的看点与规则往往相互解释。</p>
+        </div>
+        <div class="tl-item">
+          <time>第三步 · 判断</time>
+          <h3>决定围观还是参与</h3>
+          <p>围观成本低，参与需量力。若只是了解热点，读完前两步即可；若打算参与，先确认当天的公开说明与自身情况。</p>
+        </div>
+        <div class="tl-item">
+          <time>第四步 · 回看</time>
+          <h3>隔天回看时注意时间</h3>
+          <p>每日大赛寸止挑战每天都有新内容，回看旧内容时看清日期，避免把不同天的讨论混在一起理解。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常见问题</h2>
+        <p>新访客问得较多的四件事，答案尽量直接。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>每日大赛寸止挑战到底是什么？</summary>
+          <p>它是每日大赛里围绕“寸止”展开的挑战内容，核心动作是在关键节点主动停住。本站把每日大赛寸止挑战的看点、规则与参与方式整理在一起，方便一次性了解。</p>
+        </details>
+        <details>
+          <summary>没接触过，能看懂吗？</summary>
+          <p>可以。建议按“看点 → 规则 → 流程”的顺序读，先看今日看点建立印象，再用规则补齐理解，最后看流程决定是否参与。</p>
+        </details>
+        <details>
+          <summary>内容每天都会变吗？</summary>
+          <p>每日大赛按天推进，每日大赛寸止挑战的当日看点会随日期变化；规则层面的通行理解相对稳定，两部分在页面上分开呈现。</p>
+        </details>
+        <details>
+          <summary>页面上的信息能直接当结论吗？</summary>
+          <p>不能。页面只做内容梳理与阅读引导，具体条目以每日大赛当天的公开说明为准，涉及个人的内容本站不作判断。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap">
+      <div class="panel">
+        <div>
+          <h2>把每日大赛寸止挑战加入每日阅读</h2>
+          <p>当天看点、规则要点与参与流程都在本页。想随时翻看，可下载本页内容离线保存，后续再看时注意对照日期。</p>
+        </div>
+        <a class="btn btn-main" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="fbrand">
+          <svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1b1033"/>
+            <circle cx="32" cy="32" r="17" fill="none" stroke="#ffd166" stroke-width="4"/>
+            <path d="M32 20v12l8 6" stroke="#ff6b9d" stroke-width="4" stroke-linecap="round" fill="none"/>
+          </svg>
+          每日大赛寸止挑战
+        </div>
+        <p style="margin-top:10px">本页围绕每日大赛寸止挑战整理当天看点、规则理解与参与流程，内容以公开可核对范围为准，不涉及具体个人评价。网络热点请理性围观。</p>
+      </div>
+      <nav aria-label="页尾导航">
+        <ul>
+          <li><a href="#points">今日看点</a></li>
+          <li><a href="#rules">挑战规则</a></li>
+          <li><a href="#flow">参与流程</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="copy">© 每日大赛寸止挑战 · 内容梳理与阅读引导页面</div>
+  </div>
+</footer>
+
+<script>
+  var btn = document.getElementById('menuBtn');
+  var nav = document.getElementById('mainNav');
+  if (btn && nav) {
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A' && window.innerWidth <= 680) {
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+</script>
+</body>
+    </html>
