@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>妖精动漫-妖精动漫在线观看_番剧追番与作品分类</title>
+<meta name="description" content="妖精动漫主题首页，汇集妖精动漫番剧条目、作品分类与追番入口，按题材与更新状态浏览，快速找到想看的妖精动漫内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%231b1330'/%3E%3Cpath d='M32 12l5 13 14 1-11 9 4 14-12-8-12 8 4-14-11-9 14-1z' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#120e1f;
+  --bg-soft:#1b1530;
+  --card:#221a3a;
+  --line:rgba(255,255,255,.09);
+  --text:#ece8f7;
+  --muted:#a99fc4;
+  --gold:#ffd166;
+  --rose:#ff7fa8;
+  --violet:#9b7bff;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  background:radial-gradient(1200px 600px at 80% -10%,#2a1f4d 0%,transparent 60%),
+             radial-gradient(900px 500px at 0% 10%,#241a3f 0%,transparent 55%),
+             var(--bg);
+  color:var(--text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* Header */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(18,14,31,.86);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;gap:18px;min-height:66px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;letter-spacing:.5px}
+.brand .mark{width:34px;height:34px;flex:0 0 34px}
+.brand span{color:var(--text)}
+.nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.nav a{
+  font-size:14.5px;color:var(--muted);padding:7px 12px;border-radius:999px;
+  transition:.2s;
+}
+.nav a:hover,.nav a:focus-visible{color:var(--text);background:rgba(255,255,255,.07);outline:none}
+.nav a.accent{color:#1b1330;background:var(--gold);font-weight:600}
+.nav a.accent:hover{background:#ffe08f;color:#1b1330}
+
+/* Hero */
+.hero{padding:56px 0 40px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--gold);letter-spacing:1px;
+  border:1px solid rgba(255,209,102,.35);border-radius:999px;padding:5px 13px;
+  margin-bottom:20px;background:rgba(255,209,102,.07);
+}
+h1{font-size:clamp(30px,4.6vw,46px);line-height:1.25;font-weight:800;letter-spacing:1px}
+h1 .hl{
+  background:linear-gradient(100deg,var(--gold),var(--rose) 70%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{margin-top:16px;color:var(--muted);font-size:16px;max-width:36em}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:999px;font-size:15px;font-weight:600;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-primary{background:linear-gradient(100deg,var(--gold),#ffb96b);color:#241608}
+.btn-primary:hover{filter:brightness(1.07)}
+.btn-ghost{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.04)}
+.btn-ghost:hover{background:rgba(255,255,255,.09)}
+.hero-art{
+  border-radius:24px;border:1px solid var(--line);
+  background:linear-gradient(160deg,#2a2050,#1a142c 60%);
+  padding:22px;position:relative;overflow:hidden;
+}
+.hero-art::after{
+  content:"";position:absolute;inset:auto -40px -60px auto;width:200px;height:200px;
+  background:radial-gradient(circle,rgba(255,127,168,.35),transparent 70%);
+  filter:blur(6px);
+}
+.art-caption{margin-top:14px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between}
+
+/* Stats strip */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:20px 0}
+.stat{text-align:center}
+.stat b{display:block;font-size:21px;color:var(--gold);letter-spacing:.5px}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* Section base */
+section{padding:56px 0}
+.sec-head{margin-bottom:26px}
+.sec-head h2{font-size:clamp(21px,2.6vw,27px);font-weight:700;letter-spacing:.5px}
+.sec-head p{color:var(--muted);font-size:14.5px;margin-top:8px;max-width:52em}
+.tagline{color:var(--violet);font-size:12.5px;letter-spacing:2px;margin-bottom:8px}
+
+/* Category cards */
+.grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;transition:.25s;
+}
+.card:hover{transform:translateY(-3px);border-color:rgba(155,123,255,.5);background:#271e44}
+.card .ico{width:38px;height:38px;margin-bottom:14px}
+.card h3{font-size:17px;margin-bottom:8px}
+.card p{font-size:14px;color:var(--muted)}
+.card .meta{display:block;margin-top:12px;font-size:12.5px;color:var(--gold)}
+
+/* List */
+.list{display:grid;gap:12px}
+.row{
+  display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;
+}
+.row:hover{border-color:rgba(255,209,102,.4)}
+.rank{
+  width:52px;height:52px;border-radius:12px;display:grid;place-items:center;
+  font-weight:800;font-size:18px;color:#1b1330;background:linear-gradient(140deg,var(--gold),#ffb96b);
+}
+.rank.alt{background:linear-gradient(140deg,var(--rose),#ffb0c8);color:#3a0f21}
+.rank.alt2{background:linear-gradient(140deg,var(--violet),#c9b8ff);color:#22164a}
+.row h3{font-size:16px;margin-bottom:3px}
+.row p{font-size:13.5px;color:var(--muted)}
+.badge{
+  font-size:12px;color:var(--gold);border:1px solid rgba(255,209,102,.35);
+  border-radius:999px;padding:3px 11px;white-space:nowrap;
+}
+
+/* Feature split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel{
+  background:linear-gradient(160deg,#251c42,#1a142c);
+  border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+}
+.panel h3{font-size:18px;margin-bottom:10px}
+.panel p{font-size:14.5px;color:var(--muted)}
+.panel ul{margin-top:14px;list-style:none;display:grid;gap:9px}
+.panel li{font-size:14px;color:var(--text);display:flex;gap:9px;align-items:flex-start}
+.panel li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--rose);margin-top:9px;flex:0 0 7px}
+
+/* Search */
+.search-box{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;
+}
+.search-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.search-form input{
+  flex:1;min-width:200px;padding:11px 16px;border-radius:999px;
+  border:1px solid var(--line);background:#161125;color:var(--text);font-size:15px;
+  font-family:inherit;
+}
+.search-form input:focus{outline:2px solid rgba(155,123,255,.6);outline-offset:1px}
+.search-form button{
+  padding:11px 24px;border-radius:999px;border:none;cursor:pointer;
+  background:var(--violet);color:#fff;font-size:15px;font-weight:600;font-family:inherit;
+}
+.search-form button:hover{filter:brightness(1.1)}
+.result{margin-top:16px;font-size:14px;color:var(--muted);min-height:22px}
+.result b{color:var(--gold)}
+
+/* Download */
+.download{
+  margin-top:22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  justify-content:space-between;border:1px dashed rgba(255,209,102,.4);
+  border-radius:var(--radius);padding:18px 22px;background:rgba(255,209,102,.05);
+}
+.download p{font-size:14.5px;color:var(--muted);max-width:34em}
+.btn-disabled{
+  background:rgba(255,255,255,.08);color:var(--muted);
+  pointer-events:none;cursor:default;
+}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:34px 0 44px;background:rgba(255,255,255,.015)}
+.foot-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+.foot-brand{font-size:16px;font-weight:700;margin-bottom:8px}
+.foot-inner p{font-size:13px;color:var(--muted);max-width:40em}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
+.foot-links a:hover{color:var(--gold)}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .hero-art{order:-1;padding:16px}
+  .grid-cards{grid-template-columns:1fr 1fr}
+  .split{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:1fr 1fr;gap:16px}
+}
+@media (max-width:560px){
+  .grid-cards{grid-template-columns:1fr}
+  .row{grid-template-columns:48px 1fr;gap:12px}
+  .row .badge{grid-column:2;justify-self:start}
+  .rank{width:44px;height:44px;font-size:16px}
+  .nav a{padding:6px 9px;font-size:13.5px}
+  section{padding:40px 0}
+  .hero{padding:36px 0 28px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="妖精动漫 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="#1b1330" stroke="rgba(255,209,102,.5)" stroke-width="1.5"/>
+        <path d="M32 11l5.2 13.4L52 25.6l-11.4 9.2 4.1 14.2L32 40.6 19.3 49l4.1-14.2L12 25.6l14.8-1.2z" fill="#ffd166"/>
+        <circle cx="32" cy="32" r="4.5" fill="#1b1330"/>
+      </svg>
+      <span>妖精动漫</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#genres">番剧分类</a>
+      <a href="#ranking">热度榜</a>
+      <a href="#features">观看体验</a>
+      <a href="#search">找番</a>
+      <a class="accent" href="#ranking">开始追番</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">✦ 妖精动漫 · 番剧主题站</span>
+        <h1>妖精动漫</h1>
+        <p class="lead">这里是围绕妖精动漫整理的番剧入口页：按题材浏览作品、查看近期热度排序，再用关键词直接定位想看的条目。妖精动漫的每一条目都附有题材、状态与一句话简介。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#ranking">进入热度榜</a>
+          <a class="btn btn-ghost" href="#genres">浏览全部分类</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 320 220" role="presentation">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#9b7bff"/><stop offset="1" stop-color="#ff7fa8"/>
+            </linearGradient>
+          </defs>
+          <rect x="10" y="10" width="300" height="200" rx="16" fill="#1a142c" stroke="rgba(255,255,255,.08)"/>
+          <circle cx="250" cy="58" r="26" fill="url(#g1)" opacity=".85"/>
+          <path d="M40 168c26-46 54-70 84-70s58 24 84 70" fill="none" stroke="rgba(255,209,102,.65)" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M62 130l14-34 16 34z" fill="#ffd166" opacity=".9"/>
+          <path d="M108 118l10-24 11 24z" fill="#ff7fa8" opacity=".85"/>
+          <circle cx="196" cy="96" r="5" fill="#ffd166"/>
+          <circle cx="224" cy="118" r="3.5" fill="#9b7bff"/>
+          <path d="M150 40l3.6 9.4L163 53l-9.4 3.6L150 66l-3.6-9.4L137 53l9.4-3.6z" fill="#ffd166" opacity=".9"/>
+        </svg>
+        <div class="art-caption">
+          <span>题材 · 状态 · 简介</span>
+          <span>持续补充条目</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="wrap stats-inner">
+      <div class="stat"><b>6</b><span>题材大类</span></div>
+      <div class="stat"><b>12</b><span>精选条目</span></div>
+      <div class="stat"><b>7</b><span>热度排序位</span></div>
+      <div class="stat"><b>1</b><span>关键词直达入口</span></div>
+    </div>
+  </div>
+
+  <!-- Genres -->
+  <section id="genres">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="tagline">GENRES</p>
+        <h2>妖精动漫 番剧分类</h2>
+        <p>分类按题材划分，方便按兴趣收窄范围。每个分类下列出该方向的代表类型，点开分类卡片可继续查看同类条目。</p>
+      </div>
+      <div class="grid-cards">
+        <a class="card" href="#ranking">
+          <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="#ffd166" stroke-width="2"/><path d="M20 8l3.4 8.6L32 19l-8.6 2.4L20 30l-3.4-8.6L8 19l8.6-2.4z" fill="#ffd166"/></svg>
+          <h3>奇幻冒险</h3>
+          <p>异世界、精灵与魔法旅途是妖精动漫最集中的题材，剧情推进以探索与成长为主。</p>
+          <span class="meta">查看同类条目 →</span>
+        </a>
+        <a class="card" href="#ranking">
+          <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 6l4 9 10 .9-7.5 6.5 2.3 9.6L20 27l-8.8 5 2.3-9.6L6 15.9l10-.9z" fill="#ff7fa8"/></svg>
+          <h3>校园日常</h3>
+          <p>以社团、教室与四季活动为背景，节奏轻缓，适合连续观看与碎片时间补番。</p>
+          <span class="meta">查看同类条目 →</span>
+        </a>
+        <a class="card" href="#ranking">
+          <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><rect x="7" y="9" width="26" height="22" rx="4" fill="none" stroke="#9b7bff" stroke-width="2"/><path d="M15 15l12 5-12 5z" fill="#9b7bff"/></svg>
+          <h3>科幻机战</h3>
+          <p>近未来设定与机械设定并存，单集信息量大，建议按顺序连续观看。</p>
+          <span class="meta">查看同类条目 →</span>
+        </a>
+        <a class="card" href="#ranking">
+          <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 34s-13-8-13-17a7 7 0 0113-4 7 7 0 0113 4c0 9-13 17-13 17z" fill="#ffd166"/></svg>
+          <h3>治愈温情</h3>
+          <p>以生活细节和人物关系为核心，情绪起伏平缓，适合睡前与周末观看。</p>
+          <span class="meta">查看同类条目 →</span>
+        </a>
+        <a class="card" href="#ranking">
+          <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 30l8-14 6 9 5-7 5 12z" fill="#9b7bff"/><circle cx="28" cy="12" r="4" fill="#ffd166"/></svg>
+          <h3>悬疑推理</h3>
+          <p>谜题与线索贯穿全篇，适合一次看多集，避免中途断线影响理解。</p>
+          <span class="meta">查看同类条目 →</span>
+        </a>
+        <a class="card" href="#ranking">
+          <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="14" r="6" fill="#ff7fa8"/><path d="M8 33c0-7 5.4-11 12-11s12 4 12 11z" fill="#9b7bff"/></svg>
+          <h3>人物群像</h3>
+          <p>多主角视角切换，人物关系线较多，适合喜欢慢慢梳理设定的观众。</p>
+          <span class="meta">查看同类条目 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ranking -->
+  <section id="ranking">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="tagline">TRENDING</p>
+        <h2>妖精动漫 近期热度榜</h2>
+        <p>榜单按站内浏览与收藏的综合顺序排列，仅反映当前关注度，不代表作品质量评价。点击条目可前往对应分类继续浏览。</p>
+      </div>
+      <div class="list">
+        <a class="row" href="#genres">
+          <div class="rank">01</div>
+          <div><h3>雾森旅人</h3><p>奇幻冒险 · 精灵森林为舞台，讲述旅人寻找归途的过程。</p></div>
+          <span class="badge">连载中</span>
+        </a>
+        <a class="row" href="#genres">
+          <div class="rank alt">02</div>
+          <div><h3>星光社团日志</h3><p>校园日常 · 以社团活动为线索，记录四季中的日常片段。</p></div>
+          <span class="badge">已完结</span>
+        </a>
+        <a class="row" href="#genres">
+          <div class="rank alt2">03</div>
+          <div><h3>铁轨尽头的信号</h3><p>科幻机战 · 近未来都市背景，围绕一次信号异常展开。</p></div>
+          <span class="badge">连载中</span>
+        </a>
+        <a class="row" href="#genres">
+          <div class="rank">04</div>
+          <div><h3>午后甜点铺</h3><p>治愈温情 · 小店与常客之间的短篇故事合集。</p></div>
+          <span class="badge">已完结</span>
+        </a>
+        <a class="row" href="#genres">
+          <div class="rank alt">05</div>
+          <div><h3>第七扇窗</h3><p>悬疑推理 · 老宅中的线索串联，逐步揭开旧案。</p></div>
+          <span class="badge">连载中</span>
+        </a>
+        <a class="row" href="#genres">
+          <div class="rank alt2">06</div>
+          <div><h3>群青色的回声</h3><p>人物群像 · 多视角叙事，人物关系随剧情推进展开。</p></div>
+          <span class="badge">待更新</span>
+        </a>
+        <a class="row" href="#genres">
+          <div class="rank">07</div>
+          <div><h3>月下拾遗</h3><p>奇幻冒险 · 以短篇单元形式讲述各处传说与遗物。</p></div>
+          <span class="badge">连载中</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="tagline">VIEWING</p>
+        <h2>在妖精动漫找到想看的番</h2>
+        <p>找番通常卡在三个环节：不知道从哪类看起、不清楚更新状态、记不清名字。下面三块内容分别对应这三点。</p>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <h3>按题材缩小范围</h3>
+          <p>妖精动漫的条目按题材归类，先确定想看的方向，再从分类进入具体作品，比逐个翻列表更省时间。</p>
+          <ul>
+            <li>六个题材大类覆盖常见观看偏好</li>
+            <li>分类卡片直接标注代表类型</li>
+            <li>条目简介控制在一句话内</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>看清更新状态</h3>
+          <p>每个条目都标有连载、完结或待更新状态。想一次看完的观众优先选已完结，追更的观众可关注连载条目。</p>
+          <ul>
+            <li>状态标签与条目并列显示</li>
+            <li>热度排序不等于完结顺序</li>
+            <li>待更新条目会在状态变化后调整</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search -->
+  <section id="search">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="tagline">FIND</p>
+        <h2>关键词找番</h2>
+        <p>输入作品名或题材关键词，页面会在下方列表中即时匹配条目名与简介文字。</p>
+      </div>
+      <div class="search-box">
+        <label for="q" style="font-size:14.5px;color:var(--muted)">输入关键词，例如「奇幻」「社团」「信号」</label>
+        <form class="search-form" id="searchForm" role="search">
+          <input id="q" type="search" name="q" placeholder="搜索妖精动漫条目" autocomplete="off">
+          <button type="submit">查找</button>
+        </form>
+        <p class="result" id="result" aria-live="polite">当前共 12 条可检索条目，覆盖六个题材分类。</p>
+
+        <div class="download">
+          <p>需要离线保存本页的番剧目录？可下载当前页面内容，方便本地查看分类与热度排序。</p>
+          <a class="btn btn-disabled" href="#" role="button" aria-disabled="true" tabindex="-1" data-download-placeholder="true" style="pointer-events:none">下载</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="foot-brand">妖精动漫</div>
+      <p>妖精动漫主题首页，提供番剧分类、热度排序与关键词查找入口。榜单顺序反映站内关注度，条目信息以页面展示为准。</p>
+    </div>
+    <nav class="foot-links" aria-label="页尾导航">
+      <a href="#genres">番剧分类</a>
+      <a href="#ranking">热度榜</a>
+      <a href="#features">观看体验</a>
+      <a href="#search">关键词找番</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items = [
+    {t:"雾森旅人", d:"奇幻冒险 精灵森林 旅人 归途"},
+    {t:"星光社团日志", d:"校园日常 社团活动 四季 日常片段"},
+    {t:"铁轨尽头的信号", d:"科幻机战 近未来 都市 信号异常"},
+    {t:"午后甜点铺", d:"治愈温情 小店 常客 短篇合集"},
+    {t:"第七扇窗", d:"悬疑推理 老宅 线索 旧案"},
+    {t:"群青色的回声", d:"人物群像 多视角 人物关系"},
+    {t:"月下拾遗", d:"奇幻冒险 短篇单元 传说 遗物"},
+    {t:"雾森旅人 特别篇", d:"奇幻冒险 番外 短篇"},
+    {t:"星光社团日志 第二季", d:"校园日常 社团 续作"},
+    {t:"铁轨尽头的信号 前传", d:"科幻机战 前传 都市"},
+    {t:"第七扇窗 番外", d:"悬疑推理 番外 线索"},
+    {t:"月下拾遗 续", d:"奇幻冒险 传说 续篇"}
+  ];
+  var form = document.getElementById('searchForm');
+  var input = document.getElementById('q');
+  var out = document.getElementById('result');
+  function run(){
+    var kw = (input.value || '').trim().toLowerCase();
+    if(!kw){
+      out.innerHTML = '当前共 12 条可检索条目，覆盖六个题材分类。';
+      return;
+    }
+    var hit = items.filter(function(it){
+      return (it.t + ' ' + it.d).toLowerCase().indexOf(kw) > -1;
+    });
+    if(hit.length === 0){
+      out.innerHTML = '没有匹配「' + escapeHtml(kw) + '」的条目，可尝试题材词，如奇幻、校园、科幻。';
+      return;
+    }
+    var names = hit.slice(0,6).map(function(it){ return '《' + it.t + '》'; }).join('、');
+    out.innerHTML = '匹配到 <b>' + hit.length + '</b> 条：' + names + (hit.length > 6 ? ' 等' : '') + '。';
+  }
+  function escapeHtml(s){
+    return s.replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  form.addEventListener('submit', function(e){ e.preventDefault(); run(); });
+  input.addEventListener('input', run);
+})();
+</script>
+</body>
+        </html>
