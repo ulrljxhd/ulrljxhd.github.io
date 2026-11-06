@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>51黑料网-51黑料网热点爆料_全网吃瓜黑料合集</title>
+<meta name="description" content="51黑料网聚焦网络热点爆料与吃瓜黑料合集，汇总近期讨论度高的瓜点话题、网友热议方向与内容脉络，提供清晰的分类浏览入口与热点速览。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121216'/%3E%3Cpath d='M20 44 L32 18 L44 44' stroke='%23ff5a5f' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='46' r='4' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0e0f13;
+  --bg-soft:#16171e;
+  --card:#1a1c24;
+  --line:#2a2d38;
+  --txt:#e8e9ee;
+  --muted:#9a9dab;
+  --red:#ff5a5f;
+  --yellow:#ffd166;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--txt);
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(14,15,19,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;height:64px;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.5px;}
+.logo svg{flex:0 0 auto;}
+.logo .brand{color:#fff;}
+.logo .dot{color:var(--red);}
+nav.main{display:flex;gap:6px;flex-wrap:wrap;}
+nav.main a{
+  font-size:14px;color:var(--muted);padding:7px 12px;border-radius:8px;
+  transition:.2s;
+}
+nav.main a:hover{color:#fff;background:var(--card);}
+.search-box{display:flex;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 6px 5px 14px;}
+.search-box input{
+  background:none;border:none;outline:none;color:var(--txt);
+  font-size:13.5px;width:130px;font-family:inherit;
+}
+.search-box input::placeholder{color:#6c6f7d;}
+.search-box button{
+  border:none;cursor:pointer;background:var(--red);color:#fff;
+  border-radius:999px;padding:5px 14px;font-size:13px;font-family:inherit;
+  transition:.2s;
+}
+.search-box button:hover{background:#e6454a;}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  padding:64px 0 56px;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(600px 260px at 82% 8%, rgba(255,90,95,.18), transparent 70%),
+    radial-gradient(480px 240px at 8% 92%, rgba(255,209,102,.10), transparent 70%);
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;color:var(--yellow);letter-spacing:1.5px;
+  border:1px solid rgba(255,209,102,.35);border-radius:999px;
+  padding:4px 14px;margin-bottom:20px;
+}
+h1{
+  font-size:44px;line-height:1.22;font-weight:800;letter-spacing:-.5px;
+  margin-bottom:18px;
+}
+h1 .hl{color:var(--red);}
+.hero p.lead{color:var(--muted);font-size:16px;max-width:520px;margin-bottom:28px;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  border-radius:10px;padding:12px 24px;font-size:14.5px;font-weight:600;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-primary{background:var(--red);color:#fff;}
+.btn-primary:hover{background:#e6454a;transform:translateY(-1px);}
+.btn-ghost{border-color:var(--line);color:var(--txt);background:var(--card);}
+.btn-ghost:hover{border-color:#3d4150;}
+.btn[aria-disabled="true"]{opacity:.55;pointer-events:none;cursor:not-allowed;}
+.hero-art{position:relative;display:flex;justify-content:center;}
+.hero-art svg{width:100%;max-width:360px;height:auto;}
+
+/* ticker */
+.ticker{
+  border-bottom:1px solid var(--line);background:var(--bg-soft);
+  font-size:13px;color:var(--muted);
+}
+.ticker-inner{display:flex;gap:14px;align-items:center;padding:10px 0;overflow:hidden;}
+.ticker .tag{flex:0 0 auto;color:var(--red);font-weight:700;letter-spacing:1px;}
+.ticker span.item{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* section */
+section{padding:60px 0;}
+.sec-head{margin-bottom:32px;}
+.sec-head h2{font-size:25px;font-weight:700;letter-spacing:.3px;margin-bottom:8px;}
+.sec-head p{color:var(--muted);font-size:14.5px;}
+.divider-line{width:44px;height:3px;background:var(--red);border-radius:2px;margin-top:14px;}
+
+/* hot cards */
+.grid-hot{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;transition:.25s;
+}
+.card:hover{transform:translateY(-3px);border-color:#3a3e4d;background:#1e2029;}
+.card .meta{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);margin-bottom:14px;}
+.badge{
+  font-size:11px;padding:2px 9px;border-radius:6px;
+  background:rgba(255,90,95,.14);color:var(--red);font-weight:600;
+}
+.badge.y{background:rgba(255,209,102,.13);color:var(--yellow);}
+.card h3{font-size:17px;font-weight:700;line-height:1.5;margin-bottom:10px;}
+.card p{font-size:13.8px;color:var(--muted);line-height:1.8;}
+
+/* list */
+.list-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+.list-item{
+  display:flex;gap:18px;align-items:flex-start;
+  padding:20px 24px;border-bottom:1px solid var(--line);
+}
+.list-item:last-child{border-bottom:none;}
+.num{
+  flex:0 0 auto;font-size:15px;font-weight:800;color:#4a4e5e;
+  min-width:26px;line-height:1.6;
+}
+.list-item:nth-child(-n+3) .num{color:var(--red);}
+.list-body h4{font-size:15.5px;font-weight:600;margin-bottom:6px;}
+.list-body p{font-size:13.5px;color:var(--muted);}
+.list-body .sub{font-size:12px;color:#6c6f7d;margin-top:6px;}
+
+/* two col */
+.cols{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;}
+.panel h3{font-size:18px;font-weight:700;margin-bottom:16px;}
+.panel p{font-size:14.2px;color:var(--muted);margin-bottom:14px;}
+.panel p:last-child{margin-bottom:0;}
+.panel .strong{color:var(--txt);font-weight:600;}
+
+.chips{display:flex;flex-wrap:wrap;gap:9px;}
+.chip{
+  font-size:13px;padding:6px 14px;border-radius:999px;
+  background:var(--bg-soft);border:1px solid var(--line);color:var(--muted);
+  transition:.2s;
+}
+.chip:hover{color:#fff;border-color:var(--red);}
+
+/* guide */
+.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.guide{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:24px;}
+.guide .ico{
+  width:40px;height:40px;border-radius:10px;background:rgba(255,90,95,.12);
+  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+}
+.guide h4{font-size:15.5px;font-weight:700;margin-bottom:8px;}
+.guide p{font-size:13.5px;color:var(--muted);}
+
+/* faq */
+.faq{display:grid;gap:14px;}
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 24px;}
+.faq-item h4{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--yellow);}
+.faq-item p{font-size:14px;color:var(--muted);}
+
+/* footer */
+footer.site{
+  border-top:1px solid var(--line);background:var(--bg-soft);
+  padding:44px 0 32px;margin-top:20px;
+}
+.foot-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:30px;}
+.foot-brand{max-width:340px;}
+.foot-brand .logo{margin-bottom:14px;}
+.foot-brand p{font-size:13px;color:var(--muted);}
+.foot-links{display:flex;gap:56px;flex-wrap:wrap;}
+.foot-col h5{font-size:13px;color:#fff;margin-bottom:12px;letter-spacing:.5px;}
+.foot-col a{display:block;font-size:13px;color:var(--muted);margin-bottom:9px;transition:.2s;}
+.foot-col a:hover{color:var(--red);}
+.copyright{
+  border-top:1px solid var(--line);padding-top:22px;
+  font-size:12.5px;color:#6c6f7d;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:36px;}
+  .hero-art{order:-1;max-width:260px;margin:0 auto;}
+  h1{font-size:34px;}
+  .grid-hot{grid-template-columns:1fr 1fr;}
+  .cols{grid-template-columns:1fr;}
+  .guide-grid{grid-template-columns:1fr;}
+  nav.main{display:none;}
+}
+@media (max-width:600px){
+  .nav-inner{height:auto;padding:12px 0;flex-wrap:wrap;gap:12px;}
+  .search-box{order:3;width:100%;}
+  .search-box input{width:100%;}
+  .hero{padding:42px 0 40px;}
+  h1{font-size:28px;}
+  .hero p.lead{font-size:14.5px;}
+  .grid-hot{grid-template-columns:1fr;}
+  section{padding:44px 0;}
+  .sec-head h2{font-size:21px;}
+  .list-item{padding:16px 18px;gap:12px;}
+  .btn{padding:11px 18px;font-size:13.5px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top" aria-label="51黑料网 首页">
+      <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1a1c24"/>
+        <path d="M20 44 L32 18 L44 44" stroke="#ff5a5f" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="32" cy="46" r="4" fill="#ffd166"/>
+      </svg>
+      <span class="brand">51黑料网</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#hot">热点速览</a>
+      <a href="#rank">热议榜单</a>
+      <a href="#topic">瓜点分类</a>
+      <a href="#read">吃瓜须知</a>
+      <a href="#faq">常见疑问</a>
+    </nav>
+    <form class="search-box" role="search" onsubmit="return doSearch(event)">
+      <input id="q" type="search" placeholder="搜索瓜点关键词" aria-label="搜索瓜点关键词">
+      <button type="submit">搜索</button>
+    </form>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">热点爆料 · 吃瓜合集</span>
+        <h1>51黑料网</h1>
+        <p class="lead">51黑料网是一个围绕网络热点与吃瓜黑料做内容聚合的浏览站点。我们把近期讨论度高的瓜点话题按类别梳理，标注内容脉络与网友关注方向，帮你在信息杂乱的讨论里快速找到入口，看清一件事的大致来龙去脉。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#hot">浏览热点速览</a>
+          <a class="btn btn-ghost" href="#rank">查看热议榜单</a>
+          <a class="btn btn-ghost" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 340 300" role="presentation">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff5a5f" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#ffd166" stop-opacity=".85"/>
+            </linearGradient>
+          </defs>
+          <circle cx="170" cy="150" r="118" fill="#1a1c24" stroke="#2a2d38"/>
+          <circle cx="170" cy="150" r="88" fill="none" stroke="#2a2d38" stroke-dasharray="4 8"/>
+          <path d="M110 196 L170 78 L230 196" stroke="url(#g1)" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="170" cy="200" r="12" fill="#ffd166"/>
+          <circle cx="252" cy="92" r="7" fill="#ff5a5f"/>
+          <circle cx="92" cy="118" r="5" fill="#ffd166"/>
+          <rect x="132" y="230" width="76" height="8" rx="4" fill="#2a2d38"/>
+          <rect x="148" y="246" width="44" height="8" rx="4" fill="#252833"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="wrap ticker-inner">
+      <span class="tag">热议中</span>
+      <span class="item">51黑料网编辑组按讨论热度整理近期瓜点话题，内容以公开讨论为依据，请理性看待。</span>
+    </div>
+  </div>
+
+  <!-- HOT -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>热点速览</h2>
+        <p>按讨论量与关注度整理的近期瓜点方向，每一条都可以顺着线索往下看。</p>
+        <div class="divider-line"></div>
+      </div>
+      <div class="grid-hot">
+        <article class="card">
+          <div class="meta"><span class="badge">高热度</span><span>话题聚合</span></div>
+          <h3>网络热议事件的时间线梳理</h3>
+          <p>把零散的说法按先后顺序排列，标出关键节点，让整件事从发生到发酵的过程一目了然。51黑料网在这类内容里更注重顺序而不是结论。</p>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="badge y">讨论中</span><span>网友观点</span></div>
+          <h3>同一件事为何出现多种说法</h3>
+          <p>不同来源的描述常有出入。我们把这些分歧单独列出来，对比各方说法，方便读者自己判断哪些部分还需要更多信息补充。</p>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="badge">新收录</span><span>瓜点分类</span></div>
+          <h3>按领域划分的瓜点浏览入口</h3>
+          <p>娱乐、社交平台、生活话题等方向分别归类，读起来更快找到自己关心的部分，减少在无关内容上花的时间。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANK -->
+  <section id="rank" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>热议榜单</h2>
+        <p>榜单只反映页面内的浏览与讨论热度排序，不构成对事件本身的判断。</p>
+        <div class="divider-line"></div>
+      </div>
+      <div class="list-box">
+        <div class="list-item">
+          <span class="num">01</span>
+          <div class="list-body">
+            <h4>近期讨论集中的瓜点话题合集</h4>
+            <p>以公开讨论为线索，归并同类说法，给出话题的整体轮廓。</p>
+            <div class="sub">阅读入口：话题聚合 · 内容随讨论变化更新</div>
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="num">02</span>
+          <div class="list-body">
+            <h4>网友争议较大的说法对照</h4>
+            <p>并列呈现不同立场的表达，保留各自的表述方式，不做倾向性改写。</p>
+            <div class="sub">阅读入口：观点对照 · 含多方说法</div>
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="num">03</span>
+          <div class="list-body">
+            <h4>被反复转述的内容溯源</h4>
+            <p>标注信息最早出现的讨论场合，帮助区分原始说法与二次转述。</p>
+            <div class="sub">阅读入口：来源梳理 · 便于判断可信度</div>
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="num">04</span>
+          <div class="list-body">
+            <h4>话题后续与相关讨论延伸</h4>
+            <p>把后续出现的新说法接在原话题之后，形成连贯的阅读线索。</p>
+            <div class="sub">阅读入口：话题延伸 · 持续补充</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPIC -->
+  <section id="topic">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>瓜点分类</h2>
+        <p>按主题方向拆分内容，浏览时可以先选方向再深入，避免被无关信息干扰。</p>
+        <div class="divider-line"></div>
+      </div>
+      <div class="cols">
+        <div class="panel">
+          <h3>51黑料网的内容组织方式</h3>
+          <p><span class="strong">方向优先。</span>每个话题先归入一个主要方向，再补充相关分支。这样同一件事不会因为标题不同被重复拆散，读者也更容易判断自己接下来要看哪一类。</p>
+          <p><span class="strong">脉络优先。</span>吃瓜最怕看到一半断了线。我们在每个话题下尽量保留前因后果的衔接，把新出现的说法接到原有线索后面，而不是单独另起一段。</p>
+          <p><span class="strong">表述一致。</span>同一件事在不同栏目出现时，采用统一的名称与时间标注，避免读者把同一个话题当成两件不同的事。</p>
+          <p>如果你只想快速了解大致情况，看热点速览与热议榜单即可；想核对细节，再进入分类页逐条对照。</p>
+        </div>
+        <div class="panel">
+          <h3>快速定位</h3>
+          <p>按关键词筛选，或直接点选方向标签。</p>
+          <div class="chips">
+            <a class="chip" href="#hot">娱乐话题</a>
+            <a class="chip" href="#hot">社交平台</a>
+            <a class="chip" href="#rank">观点对照</a>
+            <a class="chip" href="#rank">来源梳理</a>
+            <a class="chip" href="#topic">时间线</a>
+            <a class="chip" href="#faq">吃瓜须知</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- READ -->
+  <section id="read" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>吃瓜须知</h2>
+        <p>内容看得明白，也要看得清醒。以下三点是浏览51黑料网时建议保持的习惯。</p>
+        <div class="divider-line"></div>
+      </div>
+      <div class="guide-grid">
+        <div class="guide">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff5a5f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><circle cx="12" cy="16.5" r=".8" fill="#ff5a5f"/></svg>
+          </div>
+          <h4>区分说法与事实</h4>
+          <p>页面呈现的是各方讨论中的表达，不等于已被确认的事实。看到措辞强烈的说法时，先找它的出处。</p>
+        </div>
+        <div class="guide">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffd166" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h7"/></svg>
+          </div>
+          <h4>留意时间顺序</h4>
+          <p>同一话题的旧说法常被重新转发。对照时间线，能减少把过期信息当成新情况的可能。</p>
+        </div>
+        <div class="guide">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff5a5f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V7z"/></svg>
+          </div>
+          <h4>尊重当事人</h4>
+          <p>讨论内容时避免对真实个人做过度推断。吃瓜是浏览信息，不是对他人下结论。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常见疑问</h2>
+        <p>关于51黑料网的使用方式，集中回答几个被问得最多的问题。</p>
+        <div class="divider-line"></div>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <h4>51黑料网主要提供什么内容？</h4>
+          <p>以网络热点和吃瓜黑料为主题的聚合浏览，重点在话题分类、观点对照与来源梳理，帮助读者理清一件事的讨论脉络，而不是给出定论。</p>
+        </div>
+        <div class="faq-item">
+          <h4>页面上的说法可以直接当作事实吗？</h4>
+          <p>不能。内容来自公开讨论与转述，我们保留各方原有表述并标注方向，读者需要结合出处自行判断。这也是为什么每个话题都尽量附上时间与来源线索。</p>
+        </div>
+        <div class="faq-item">
+          <h4>怎样更快找到自己关心的话题？</h4>
+          <p>可以先用顶部搜索框输入关键词，或从热点速览与热议榜单入手，再通过瓜点分类进入具体方向。三个入口的区别在于：速览看轮廓，榜单看热度，分类看范围。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#top">
+          <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1a1c24"/>
+            <path d="M20 44 L32 18 L44 44" stroke="#ff5a5f" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="32" cy="46" r="4" fill="#ffd166"/>
+          </svg>
+          <span class="brand">51黑料网</span>
+        </a>
+        <p>聚合网络热点与吃瓜话题的浏览站点，按分类、时间线与观点对照组织内容，帮助读者看清讨论脉络。</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h5>内容</h5>
+          <a href="#hot">热点速览</a>
+          <a href="#rank">热议榜单</a>
+          <a href="#topic">瓜点分类</a>
+        </div>
+        <div class="foot-col">
+          <h5>浏览</h5>
+          <a href="#read">吃瓜须知</a>
+          <a href="#faq">常见疑问</a>
+          <a href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 51黑料网 · 内容基于公开讨论整理，仅供参考</span>
+      <span>理性吃瓜，尊重事实与当事人</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function doSearch(e){
+  e.preventDefault();
+  var q = document.getElementById('q').value.trim();
+  var target = document.getElementById('hot');
+  if(q){
+    var map = {
+      '榜单':'rank','分类':'topic','须知':'read','疑问':'faq','热点':'hot'
+    };
+    for(var k in map){
+      if(q.indexOf(k) > -1){ target = document.getElementById(map[k]); break; }
+    }
+  }
+  target.scrollIntoView({behavior:'smooth'});
+  return false;
+}
+</script>
+</body>
+  </html>
